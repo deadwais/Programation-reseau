@@ -45,14 +45,14 @@ def handle_client(client):
             else:
                 broadcast(message_str, client)
         except Exception as e:
-               print(e)
-          #  index = clients.index(client)
-          #  clients.remove(client)
-          #  client.close()
-          #  username = usernames[index]
-          #  print(f'The user {username} has quit the chat.')
-          #  broadcast(f'{username} has left the chat.', client)
-          #  usernames.remove(username)
+            
+            index = clients.index(client)
+            clients.remove(client)
+            client.close()
+            username = usernames[index]
+            print(f'The user {username} has quit the chat.')
+            broadcast(f'{username} has left the chat.', client)
+            usernames.remove(username)
 
 # Fonction pour accepter les nouveaux clients
 def receive():
